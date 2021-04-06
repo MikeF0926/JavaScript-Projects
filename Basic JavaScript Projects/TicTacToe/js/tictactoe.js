@@ -93,7 +93,7 @@ function checkWinConditions() {
     // O 6, 7, 8 condtion.
     else if (arrayIncludes('6O', '7O', '8O')) { drawWinLine(50, 508, 558, 508) }
     // O 0, 3, 6 condtion.
-    else if (arrayIncludes('3O', '3O', '6O')) { drawWinLine(100, 50, 100, 558) }
+    else if (arrayIncludes('0O', '3O', '6O')) { drawWinLine(100, 50, 100, 558) }
     // O 1, 4, 7 condtion.
     else if (arrayIncludes('1O', '4O', '7O')) { drawWinLine(304, 50, 304, 558) }
     // O 2, 5, 8 condtion.
@@ -161,7 +161,6 @@ function drawWinLine (coordX1, coordY1, coordX2, coordY2) {
         x = x1,
         //This variable stores temporary y axis data we update in our animation loop.
         y = y1;
-}
 
 //This function interacts with the canvas
 function animateLineDrawing() {
@@ -199,7 +198,6 @@ function animateLineDrawing() {
         if (x >= x2 && y <= y2) { cancelAnimationFrame(animationLoop); }
     }
 }
-
 //This function clears our canvas after our win line is drawn.
 function clear() {
     //This line starts our animation loop.
@@ -217,6 +215,7 @@ audio('./media/winner.mp3');
 animateLineDrawing();
 //This line waits 1 second. Then, clears canvas, resets games, and allowes clicking again.
 setTimeout(function() {clear(); resetGame(); }, 1000);
+}
 
 //This function resets the game in the event of a tie or a win.
 function resetGame() {
