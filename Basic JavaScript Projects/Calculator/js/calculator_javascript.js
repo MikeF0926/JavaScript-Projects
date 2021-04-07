@@ -63,6 +63,7 @@ function Handle_Operator(Next_Operator) {
         result = (result * 1).toString()
         Calculator.Display_Value = parseFloat(result);
         Calculator.First_Operand = parseFloat(result);
+    
     }
     Calculator.Wait_Second_Operand = true;
     Calculator.operator = Next_Operator;
@@ -78,32 +79,31 @@ const Perform_Calculation = {
 
 function Calculator_Reset() {
     Calculator.Display_Value = '0';
-    Calculator.First_Operand = null ;
+    Calculator.First_Operand = null;
     Calculator.Wait_Second_Operand = false;
-    Calculator.operator = null ;
+    Calculator.operator = null;
 }
 // this function updates the screen with the contents of Display_Value
 function Update_Display() {
-    const display = document.querySelector('.calculator-screen');
+    const display = document.querySelector('calculator-screen');
     display.value = Calculator.Display_Value;
 }
 
-
 Update_Display();
 // this section monitors button clicks
-const keys = document.querySelector('.calculator-keys');
-keys.addEventListener('click', (event) => {
+const keys = document.querySelector('calculator-keys');
+keys.addEventListener ('click', (event) => {
     // the target variable is an object that represents the element
     // that was clicked
     const { target } = event;
     // if the element that was clicked on is not a button, exit the function
     if (!target.matches('button')) {
-        return;
+        return; 
     }
 
     if (target.classList.contains('operator')) {
         Handle_Operator(target.value);
-        Update_Display();
+        Update_Display(); 
         return;
     }
 
