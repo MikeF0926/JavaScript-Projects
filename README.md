@@ -1,3 +1,7 @@
 # JavaScript-Projects
 
-I will be creating interactive websites using javascript. I will continue to update as I work on projects. Enjoy!
+## Made many projects with javascript consisting of: constructors, math operators, functions, alerts, string methods, and loops.
+
+## I also created a TicTacToe game, a functioning calculator, and an interactive pizza menu.
+
+### Check it out!
